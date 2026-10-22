@@ -3,73 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arquitecto de Software | Presentación Profesional</title>
+    <title>Ricardo Urrego | Executive Profile</title>
     <meta
       name="description"
-      content="Presentación profesional de un arquitecto de software con enfoque en soluciones escalables, liderazgo técnico y transformación digital."
+      content="Perfil ejecutivo de Ricardo Urrego, Systems Engineer y arquitecto cloud con experiencia en banca, telecomunicaciones y transformación digital."
     />
     <style>
       :root {
-        --bg: #0b1020;
-        --bg-soft: #121a2b;
-        --panel: rgba(18, 26, 43, 0.8);
-        --panel-strong: #1a243a;
-        --primary: #67e8f9;
-        --primary-strong: #22d3ee;
-        --secondary: #a78bfa;
-        --text: #e5eefb;
-        --muted: #9aa9c2;
-        --accent: #34d399;
-        --warning: #fbbf24;
-        --border: rgba(148, 163, 184, 0.18);
-        --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        --bg: #08110d;
+        --bg-alt: #0d1b15;
+        --panel: rgba(18, 35, 28, 0.92);
+        --panel-strong: rgba(25, 46, 37, 0.98);
+        --panel-soft: rgba(18, 28, 24, 0.82);
+        --line: rgba(149, 197, 167, 0.18);
+        --text: #ecf8f1;
+        --muted: #bfd6c5;
+        --green: #7ae0a0;
+        --green-deep: #47c982;
+        --green-soft: #d8f9e4;
+        --violet: #b79eff;
+        --violet-soft: #e2d8ff;
+        --shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
       }
 
       * { box-sizing: border-box; }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
+      html { scroll-behavior: smooth; }
       body {
         margin: 0;
         font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         background:
-          radial-gradient(circle at top right, rgba(103, 232, 249, 0.18), transparent 25%),
-          radial-gradient(circle at left center, rgba(167, 139, 250, 0.14), transparent 35%),
+          radial-gradient(circle at top left, rgba(122, 224, 160, 0.12), transparent 24%),
+          radial-gradient(circle at bottom right, rgba(183, 158, 255, 0.12), transparent 30%),
           var(--bg);
         color: var(--text);
         line-height: 1.6;
       }
+      a { color: inherit; text-decoration: none; }
 
-      a {
-        color: inherit;
-        text-decoration: none;
+      .page {
+        max-width: 1180px;
+        margin: 38px auto;
+        padding: 0 18px 50px;
       }
 
-      img {
-        max-width: 100%;
+      .frame {
+        background: linear-gradient(180deg, rgba(16, 31, 25, 0.96), rgba(11, 18, 15, 0.98));
+        border: 1px solid var(--line);
+        border-radius: 30px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
       }
 
-      .container {
-        width: min(1120px, calc(100% - 32px));
-        margin: 0 auto;
-      }
-
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        backdrop-filter: blur(14px);
-        background: rgba(11, 16, 32, 0.7);
-        border-bottom: 1px solid var(--border);
-      }
-
-      .nav {
+      .topbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        min-height: 74px;
+        padding: 18px 28px 14px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(10, 19, 16, 0.8);
       }
 
       .brand {
@@ -77,427 +68,289 @@
         align-items: center;
         gap: 12px;
         font-weight: 700;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--green-soft);
+        font-size: 0.74rem;
       }
 
       .brand-mark {
-        width: 36px;
-        height: 36px;
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, var(--green), var(--violet));
         display: grid;
         place-items: center;
-        border-radius: 12px;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        color: #08111d;
+        color: #09150e;
         font-weight: 900;
+        font-size: 0.72rem;
       }
 
-      .nav-links {
-        display: flex;
-        gap: 26px;
-        flex-wrap: wrap;
-        color: var(--muted);
-        font-size: 0.96rem;
-      }
-
-      .nav-links a:hover {
-        color: var(--text);
-      }
-
-      .cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 0.9rem 1.4rem;
-        border-radius: 999px;
-        font-weight: 700;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .cta:hover {
-        transform: translateY(-2px);
-      }
-
-      .cta.primary {
-        color: #06131d;
-        background: linear-gradient(135deg, var(--primary), var(--accent));
-        box-shadow: 0 14px 30px rgba(34, 211, 238, 0.3);
-      }
-
-      .cta.secondary {
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.02);
-      }
-
-      .hero {
-        padding: 92px 0 48px;
-      }
-
-      .hero-grid {
+      .content {
         display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 36px;
-        align-items: center;
+        grid-template-columns: 290px minmax(0, 1fr);
       }
 
-      .eyebrow {
-        color: var(--primary);
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        font-size: 0.76rem;
-        font-weight: 700;
+      .sidebar {
+        padding: 24px 20px 20px;
+        background: linear-gradient(180deg, rgba(18, 35, 28, 0.92), rgba(12, 22, 18, 0.92));
+        border-right: 1px solid var(--line);
+      }
+
+      .portrait-wrap {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 18px;
+      }
+
+      .portrait {
+        width: 150px;
+        height: 150px;
+        border-radius: 22px;
+        border: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(122, 224, 160, 0.12), rgba(183, 158, 255, 0.08));
+        object-fit: cover;
+        image-rendering: pixelated;
+      }
+
+      .name-block {
+        text-align: center;
         margin-bottom: 18px;
       }
 
       h1 {
-        font-size: clamp(2.8rem, 5vw, 5rem);
-        line-height: 0.96;
-        margin: 0 0 18px;
+        margin: 0;
+        font-size: clamp(1.7rem, 2vw, 2.1rem);
         letter-spacing: -0.06em;
+        line-height: 1.05;
       }
 
-      .gradient-text {
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+      .role {
+        margin-top: 8px;
+        color: var(--green-soft);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+        font-weight: 700;
       }
 
-      .lead {
-        max-width: 640px;
-        font-size: 1.08rem;
-        color: var(--muted);
-        margin-bottom: 28px;
+      .sidebar-section {
+        padding-top: 18px;
+        margin-top: 18px;
+        border-top: 1px solid var(--line);
       }
 
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        margin-bottom: 28px;
-      }
-
-      .metrics {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-top: 14px;
-      }
-
-      .metric {
-        min-width: 120px;
-      }
-
-      .metric strong {
+      .eyebrow {
         display: block;
-        font-size: 1.65rem;
-        letter-spacing: -0.04em;
+        margin-bottom: 12px;
+        color: var(--green-soft);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.68rem;
+        font-weight: 700;
       }
 
-      .metric span {
-        color: var(--muted);
-        font-size: 0.9rem;
+      .contact-list {
+        display: grid;
+        gap: 12px;
       }
 
-      .profile-card {
-        position: relative;
-        padding: 24px;
-        border: 1px solid var(--border);
-        border-radius: 28px;
-        background: linear-gradient(180deg, rgba(19, 29, 47, 0.85), rgba(11, 16, 32, 0.98));
-        box-shadow: var(--shadow);
+      .contact-item {
+        display: grid;
+        gap: 2px;
       }
 
-      .profile-visual {
-        position: relative;
-        min-height: 480px;
-        border-radius: 22px;
-        background:
-          linear-gradient(180deg, rgba(12, 18, 29, 0.15), rgba(12, 18, 29, 0.7)),
-          radial-gradient(circle at top, rgba(103, 232, 249, 0.18), transparent 38%),
-          linear-gradient(135deg, #111827, #1f2937 45%, #0f172a);
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.06);
-      }
-
-      .avatar {
-        position: absolute;
-        inset: 34px 32px 100px;
-        border-radius: 26px;
-        background:
-          linear-gradient(145deg, rgba(255,255,255,0.14), rgba(255,255,255,0.02)),
-          linear-gradient(135deg, rgba(103,232,249,0.16), rgba(167,139,250,0.2));
-        border: 1px solid rgba(255,255,255,0.08);
-      }
-
-      .avatar::before {
-        content: "";
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        border-radius: 50%;
-        left: 50%;
-        top: 18%;
-        transform: translateX(-50%);
-        box-shadow: 0 0 0 18px rgba(255,255,255,0.04);
-      }
-
-      .avatar::after {
-        content: "";
-        position: absolute;
-        width: 230px;
-        height: 150px;
-        border-radius: 110px 110px 0 0;
-        background: linear-gradient(180deg, rgba(17,24,39,0.9), rgba(17,24,39,0.38));
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%);
-      }
-
-      .floating-badge {
-        position: absolute;
-        background: rgba(9, 14, 24, 0.9);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 12px 16px;
-        box-shadow: var(--shadow);
-        font-size: 0.84rem;
-        color: var(--muted);
-      }
-
-      .badge-top {
-        top: 20px;
-        right: 18px;
-      }
-
-      .badge-bottom {
-        left: 18px;
-        bottom: 22px;
-      }
-
-      .badge-top strong,
-      .badge-bottom strong {
-        display: block;
+      .contact-item strong {
         color: var(--text);
-        font-size: 1.08rem;
-        margin-top: 3px;
+        font-size: 0.8rem;
       }
 
-      section {
-        padding: 52px 0;
+      .contact-item span {
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .chip {
+        border-radius: 999px;
+        background: rgba(122, 224, 160, 0.08);
+        border: 1px solid rgba(122, 224, 160, 0.18);
+        color: var(--text);
+        padding: 7px 10px;
+        font-size: 0.72rem;
+      }
+
+      .main {
+        padding: 28px 26px 32px;
+      }
+
+      .summary {
+        margin-bottom: 24px;
+        padding: 18px 20px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(20, 35, 29, 0.66);
+      }
+
+      .summary p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.03rem;
+      }
+
+      .section {
+        margin-top: 22px;
       }
 
       .section-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: end;
-        gap: 20px;
-        margin-bottom: 26px;
+        margin-bottom: 14px;
       }
 
-      .kicker {
-        color: var(--primary);
+      .section-header h2 {
+        margin: 0;
+        color: var(--green-soft);
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        letter-spacing: 0.12em;
-        font-weight: 700;
-        font-size: 0.75rem;
-      }
-
-      h2 {
-        margin: 8px 0 0;
-        font-size: clamp(2rem, 3vw, 3rem);
-        letter-spacing: -0.05em;
-      }
-
-      .section-subtitle {
-        max-width: 540px;
-        color: var(--muted);
-      }
-
-      .about-grid,
-      .grid-3 {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 22px;
-      }
-
-      .card {
-        background: rgba(19, 29, 47, 0.62);
-        border: 1px solid var(--border);
-        border-radius: 22px;
-        padding: 24px;
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-      }
-
-      .feature-icon {
-        width: 48px;
-        height: 48px;
-        display: grid;
-        place-items: center;
-        border-radius: 14px;
-        margin-bottom: 18px;
-        font-size: 1.3rem;
-        background: linear-gradient(135deg, rgba(103, 232, 249, 0.14), rgba(167, 139, 250, 0.18));
-        border: 1px solid rgba(103,232,249,0.18);
-      }
-
-      .card h3 {
-        margin: 0 0 10px;
-        font-size: 1.2rem;
-      }
-
-      .card p,
-      .card li {
-        color: var(--muted);
       }
 
       .timeline {
         display: grid;
-        gap: 18px;
+        gap: 16px;
       }
 
-      .timeline-item {
+      .job {
         position: relative;
-        padding-left: 22px;
-        border-left: 2px solid rgba(103, 232, 249, 0.3);
+        padding: 18px 18px 18px 18px;
+        border-radius: 18px;
+        background: rgba(20, 32, 28, 0.82);
+        border: 1px solid var(--line);
       }
 
-      .timeline-item::before {
+      .job::before {
         content: "";
         position: absolute;
-        left: -7px;
-        top: 10px;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        left: 14px;
+        top: 22px;
+        bottom: 22px;
+        width: 2px;
+        background: linear-gradient(180deg, rgba(122, 224, 160, 0.8), rgba(183, 158, 255, 0.2));
       }
 
-      .timeline-item .meta {
+      .job-inner {
+        position: relative;
+        padding-left: 20px;
+      }
+
+      .job-inner::before {
+        content: "";
+        position: absolute;
+        left: -24px;
+        top: 8px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--green), var(--violet));
+      }
+
+      .job-head {
         display: flex;
         justify-content: space-between;
-        gap: 14px;
-        flex-wrap: wrap;
-        font-size: 0.8rem;
-        color: var(--primary);
-        margin-bottom: 8px;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-      }
-
-      .timeline-item h3 {
-        margin: 0 0 6px;
-      }
-
-      .skill-cloud {
-        display: flex;
-        flex-wrap: wrap;
+        align-items: baseline;
         gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 4px;
       }
 
-      .chip {
-        padding: 10px 14px;
-        border-radius: 999px;
-        background: rgba(103, 232, 249, 0.08);
-        border: 1px solid rgba(103, 232, 249, 0.2);
-        color: var(--text);
-        font-size: 0.92rem;
+      .job-role {
+        margin: 0;
+        font-size: 1.06rem;
       }
 
-      .project-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 22px;
-      }
-
-      .project {
-        padding: 22px;
-        border-radius: 22px;
-        background: rgba(19, 29, 47, 0.6);
-        border: 1px solid var(--border);
-      }
-
-      .project-tag {
-        display: inline-block;
-        margin-bottom: 12px;
-        padding: 7px 10px;
-        border-radius: 999px;
-        background: rgba(52, 211, 153, 0.12);
-        color: var(--accent);
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
+      .job-meta {
+        color: var(--green-soft);
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
       }
 
-      .project h3 {
-        margin: 0 0 12px;
-        font-size: 1.4rem;
+      .company {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-weight: 600;
       }
 
-      .project ul {
+      .job p {
         margin: 0;
-        padding-left: 18px;
         color: var(--muted);
       }
 
-      .quote-box {
-        padding: 30px 26px;
-        border-left: 4px solid var(--primary);
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .card {
         border-radius: 18px;
-        background: rgba(19, 29, 47, 0.72);
-        color: var(--text);
-        font-size: 1.1rem;
+        background: rgba(20, 32, 28, 0.82);
+        border: 1px solid var(--line);
+        padding: 18px;
       }
 
-      footer {
-        padding: 42px 0 70px;
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 1rem;
       }
 
-      .footer-box {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        flex-wrap: wrap;
-        padding: 26px 24px;
-        border-radius: 22px;
-        background: linear-gradient(135deg, rgba(103, 232, 249, 0.08), rgba(167, 139, 250, 0.08));
-        border: 1px solid var(--border);
+      .card p,
+      .card li {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .card ul {
+        margin: 10px 0 0 18px;
+        padding: 0;
       }
 
       @media (max-width: 900px) {
-        .hero-grid,
-        .about-grid,
-        .grid-3,
-        .project-grid {
+        .content {
           grid-template-columns: 1fr;
         }
 
-        .nav {
-          flex-direction: column;
-          justify-content: center;
-          gap: 14px;
-          padding: 18px 0;
-        }
-
-        .nav-links {
-          justify-content: center;
+        .sidebar {
+          border-right: none;
+          border-bottom: 1px solid var(--line);
         }
       }
 
-      @media (max-width: 560px) {
-        .hero {
-          padding-top: 72px;
+      @media (max-width: 620px) {
+        .page {
+          margin: 16px auto 30px;
+          padding: 0 10px 20px;
         }
 
-        .metrics {
-          flex-direction: column;
-          align-items: flex-start;
+        .topbar {
+          padding: 16px 18px 12px;
         }
 
-        .section-header {
+        .main {
+          padding: 20px 16px 18px;
+        }
+
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+
+        .job-head {
           flex-direction: column;
           align-items: flex-start;
         }
@@ -505,280 +358,204 @@
     </style>
   </head>
   <body>
-    <header>
-      <div class="container nav">
-        <div class="brand" aria-label="Arquitecto de software">
-          <div class="brand-mark">AS</div>
-          <span>Arquitecto de Software</span>
-        </div>
-        <nav class="nav-links" aria-label="Navegación principal">
-          <a href="#sobre-mi">Sobre mí</a>
-          <a href="#experiencia">Experiencia</a>
-          <a href="#habilidades">Habilidades</a>
-          <a href="#proyectos">Proyectos</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div>
-            <div class="eyebrow">Transformación digital · Arquitectura · Liderazgo técnico</div>
-            <h1>
-              Diseño sistemas que <span class="gradient-text">escalan</span> con negocio y equipo.
-            </h1>
-            <p class="lead">
-              Soy un arquitecto de software que combina visión estratégica, ingeniería sólida y liderazgo técnico
-              para crear soluciones digitales robustas, sostenibles y alineadas con los objetivos del negocio.
-            </p>
-            <div class="hero-actions">
-              <a class="cta primary" href="#contacto">Agendar conversación</a>
-              <a class="cta secondary" href="#proyectos">Ver proyectos</a>
-            </div>
-            <div class="metrics" aria-label="estadísticas clave">
-              <div class="metric">
-                <strong>12+</strong>
-                <span>Años de experiencia</span>
-              </div>
-              <div class="metric">
-                <strong>25</strong>
-                <span>Proyectos liderados</span>
-              </div>
-              <div class="metric">
-                <strong>99.9%</strong>
-                <span>Disponibilidad</span>
-              </div>
-            </div>
+    <div class="page">
+      <div class="frame">
+        <header class="topbar">
+          <div class="brand">
+            <span class="brand-mark">RU</span>
+            <span>Ricardo Urrego</span>
           </div>
+        </header>
 
-          <div class="profile-card" aria-label="Perfil profesional">
-            <div class="profile-visual">
-              <div class="avatar" aria-hidden="true"></div>
-              <div class="floating-badge badge-top">
-                Especialidad
-                <strong>Arquitectura Cloud</strong>
-              </div>
-              <div class="floating-badge badge-bottom">
-                Enfoque
-                <strong>Escalabilidad &amp; Calidad</strong>
+        <div class="content">
+          <aside class="sidebar">
+            <div class="portrait-wrap">
+              <img
+                class="portrait"
+                src="portrait-ricardo.png"
+                alt="Retrato pixelado de Ricardo Urrego"
+                width="150"
+                height="150"
+              />
+            </div>
+
+            <div class="name-block">
+              <h1>Ricardo Urrego</h1>
+              <div class="role">Systems Engineer</div>
+            </div>
+
+            <div class="sidebar-section">
+              <span class="eyebrow">Contacto</span>
+              <div class="contact-list">
+                <div class="contact-item">
+                  <strong>Teléfono</strong>
+                  <span>+57 3193242984</span>
+                </div>
+                <div class="contact-item">
+                  <strong>Email</strong>
+                  <span>ricarurrego@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                  <strong>Ubicación</strong>
+                  <span>Bogotá, Colombia</span>
+                </div>
+                <div class="contact-item">
+                  <strong>Edad</strong>
+                  <span>33 años</span>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section id="sobre-mi">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <div class="kicker">Sobre mí</div>
-              <h2>Mi enfoque</h2>
-            </div>
-            <p class="section-subtitle">
-              Ayudo a organizaciones a convertir complejidad en claridad, equilibrando estrategia empresarial,
-              experiencia del usuario y excelencia técnica.
-            </p>
-          </div>
-
-          <div class="about-grid">
-            <article class="card">
-              <div class="feature-icon">🏗️</div>
-              <h3>Arquitectura orientada a valor</h3>
-              <p>
-                Diseño de soluciones con visión de negocio, priorizando capacidades que generen impacto real y una
-                evolución sostenible con el tiempo.
-              </p>
-            </article>
-            <article class="card">
-              <div class="feature-icon">⚙️</div>
-              <h3>Ingeniería de confianza</h3>
-              <p>
-                Principios sólidos de calidad, seguridad, observabilidad y mantenibilidad para construir sistemas
-                resilientes y con una base técnica clara.
-              </p>
-            </article>
-            <article class="card">
-              <div class="feature-icon">👥</div>
-              <h3>Liderazgo de equipos</h3>
-              <p>
-                Trabajo cercano con equipos multidisciplinarios para alinear decisiones técnicas, acelerar entregas y
-                fortalecer la capacidad de ejecución.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="experiencia">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <div class="kicker">Experiencia</div>
-              <h2>Trayectoria</h2>
-            </div>
-          </div>
-
-          <div class="timeline">
-            <article class="card timeline-item">
-              <div class="meta">
-                <span>2022 - Presente</span>
-                <span>Senior Solutions Architect</span>
-              </div>
-              <h3>Arquitecto principal en empresas de crecimiento internacional</h3>
-              <p>
-                Lidero transformaciones digitales en ambientes de alta demanda, diseñando plataformas basadas en
-                microservicios, integración de sistemas y modernización de aplicaciones críticas.
-              </p>
-            </article>
-
-            <article class="card timeline-item">
-              <div class="meta">
-                <span>2017 - 2022</span>
-                <span>Lead Software Engineer</span>
-              </div>
-              <h3>Dirección técnica de equipos y productos digitales</h3>
-              <p>
-                Encargado de definir estándares de arquitectura, mejorar la agilidad del desarrollo y garantizar
-                calidad en plataformas con alta carga de usuarios y múltiples dependencias.
-              </p>
-            </article>
-
-            <article class="card timeline-item">
-              <div class="meta">
-                <span>2012 - 2017</span>
-                <span>Fullstack Developer</span>
-              </div>
-              <h3>Construcción de productos y soluciones de negocio</h3>
-              <p>
-                Desarrollo de aplicaciones empresariales, APIs, servicios backend y proyectos con enfoque en mejora de
-                procesos, automatización y digitalización de servicios.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="habilidades">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <div class="kicker">Competencias</div>
-              <h2>Habilidades clave</h2>
-            </div>
-          </div>
-
-          <div class="grid-3">
-            <article class="card">
-              <h3>Arquitectura</h3>
-              <div class="skill-cloud">
-                <span class="chip">Microservicios</span>
-                <span class="chip">Event-driven</span>
-                <span class="chip">DDD</span>
-                <span class="chip">APIs</span>
-                <span class="chip">Cloud Native</span>
-              </div>
-            </article>
-
-            <article class="card">
-              <h3>Cloud &amp; DevOps</h3>
-              <div class="skill-cloud">
+            <div class="sidebar-section">
+              <span class="eyebrow">Stack principal</span>
+              <div class="chips">
+                <span class="chip">Cloud</span>
+                <span class="chip">Architecture</span>
                 <span class="chip">AWS</span>
+                <span class="chip">GCP</span>
                 <span class="chip">Azure</span>
-                <span class="chip">Docker</span>
                 <span class="chip">Kubernetes</span>
-                <span class="chip">CI/CD</span>
+                <span class="chip">OpenShift</span>
+                <span class="chip">DevOps</span>
               </div>
-            </article>
-
-            <article class="card">
-              <h3>Gestión</h3>
-              <div class="skill-cloud">
-                <span class="chip">Roadmaps</span>
-                <span class="chip">Stakeholders</span>
-                <span class="chip">Arquitectura Empresarial</span>
-                <span class="chip">Estándares</span>
-                <span class="chip">Mentoría</span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="proyectos">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <div class="kicker">Casos de éxito</div>
-              <h2>Proyectos destacados</h2>
             </div>
-          </div>
+          </aside>
 
-          <div class="project-grid">
-            <article class="project">
-              <div class="project-tag">Fintech</div>
-              <h3>Plataforma de pagos escalable</h3>
-              <ul>
-                <li>Rediseño de arquitectura para soportar crecimiento de 3x en volumen transaccional.</li>
-                <li>Optimización de integración con proveedores y automatización de procesos críticos.</li>
-                <li>Implementación de observabilidad, seguridad y gobernanza con mejor trazabilidad.</li>
-              </ul>
-            </article>
+          <main class="main">
+            <section class="summary">
+              <p>
+                Systems Engineer with 6 years of professional experience in software development, cloud architecture,
+                and digital transformation across the banking and telecommunications industries. Strong technical
+                background combined with business acumen to design value-driven solutions and support sales
+                engagements. Experienced with AWS, Google Cloud and IBM Cloud.
+              </p>
+            </section>
 
-            <article class="project">
-              <div class="project-tag">Healthcare</div>
-              <h3>Portal de servicios clínicos</h3>
-              <ul>
-                <li>Modernización de aplicaciones legacy hacia una experiencia digital más rápida y segura.</li>
-                <li>Integración de servicios con estándares regulatorios y fiables para usuario final.</li>
-                <li>Mejora de tiempos de respuesta y disponibilidad del sistema.</li>
-              </ul>
-            </article>
+            <section class="section">
+              <div class="section-header">
+                <h2>Experiencia</h2>
+              </div>
+              <div class="timeline">
+                <article class="job">
+                  <div class="job-inner">
+                    <div class="job-head">
+                      <h3 class="job-role">Solution Architect</h3>
+                      <span class="job-meta">Nov 2025 – Aug 2026</span>
+                    </div>
+                    <span class="company">IBM Colombia · Consulting</span>
+                    <p>
+                      Solution architect for a modernization project at a telecommunications company. Modernization of
+                      eTOM processes in accordance with TM Forum standards and company needs. Design of BPMN
+                      processes and solution architecture. Implemented Generative AI models to automate analysis of
+                      complex documentation and generation of architecture diagrams.
+                    </p>
+                  </div>
+                </article>
 
-            <article class="project">
-              <div class="project-tag">Retail</div>
-              <h3>Arquitectura omnicanal</h3>
-              <ul>
-                <li>Unificación de canales digitales y backoffice con datos consistentes y escalables.</li>
-                <li>Definición de un modelo de APIs y event sourcing para acelerar nuevas integraciones.</li>
-                <li>Reducción de cuellos de botella operativos y tiempos de despliegue.</li>
-              </ul>
-            </article>
+                <article class="job">
+                  <div class="job-inner">
+                    <div class="job-head">
+                      <h3 class="job-role">Mbaas Architect</h3>
+                      <span class="job-meta">May 2023 – Oct 2025</span>
+                    </div>
+                    <span class="company">IBM Colombia · Consulting</span>
+                    <p>
+                      Designed and executed architecture for Backend as a Service projects for the banking client
+                      Davivienda in Colombia. Agile Architect and Technical Lead for development and project integration
+                      teams. Managed components on Google Cloud Platform and built cloud-native solutions aligned with
+                      modernization and transformation initiatives.
+                    </p>
+                  </div>
+                </article>
 
-            <article class="project">
-              <div class="project-tag">Enterprise</div>
-              <h3>Transformación de sistemas críticos</h3>
-              <ul>
-                <li>Evaluación y priorización de iniciativas de transformación digital.</li>
-                <li>Definición de visión técnica, estándares y roadmaps para múltiples equipos.</li>
-                <li>Generación de mayor madurez de arquitectura con enfoque en sostenibilidad y valor.</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
+                <article class="job">
+                  <div class="job-inner">
+                    <div class="job-head">
+                      <h3 class="job-role">Modernization Architect</h3>
+                      <span class="job-meta">Jan 2022 – Apr 2023</span>
+                    </div>
+                    <span class="company">IBM Colombia · Consulting</span>
+                    <p>
+                      Architected and executed application modernization projects. Led cross-functional development,
+                      DevOps and integration teams, served as Scrum Master, drove project delivery and Agile
+                      methodologies, and deployed cloud infrastructure including Kubernetes, OpenShift, PostgreSQL,
+                      Cloud Monitoring, Prometheus, Grafana and VPC networking.
+                    </p>
+                  </div>
+                </article>
 
-      <section>
-        <div class="container">
-          <div class="quote-box">
-            “La arquitectura no es solo crear sistemas; es crear capacidad, claridad y confianza para que las personas
-            y las organizaciones puedan crecer de forma sostenida.”
-          </div>
-        </div>
-      </section>
-    </main>
+                <article class="job">
+                  <div class="job-inner">
+                    <div class="job-head">
+                      <h3 class="job-role">Cloud Architect</h3>
+                      <span class="job-meta">Feb 2020 – Jan 2022</span>
+                    </div>
+                    <span class="company">IBM Colombia · Consulting</span>
+                    <p>
+                      Provided technical architecture support and guidance within the IBM Partner Ecosystem and client
+                      engagements. Completed commercial and sales enablement training through IBM Global Sales School
+                      and supported application modernization initiatives.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </section>
 
-    <footer id="contacto">
-      <div class="container">
-        <div class="footer-box">
-          <div>
-            <div class="kicker">Contacto</div>
-            <h2>Hablemos de tu próximo desafío</h2>
-          </div>
-          <a class="cta primary" href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a>
+            <section class="section">
+              <div class="section-header">
+                <h2>Educación y certificaciones</h2>
+              </div>
+              <div class="two-col">
+                <div class="card">
+                  <h3>Systems Engineer</h3>
+                  <p>Universidad El Bosque</p>
+                  <p style="margin-top: 8px; color: var(--green-soft);">2014 – 2019</p>
+                </div>
+
+                <div class="card">
+                  <h3>Formación complementaria</h3>
+                  <ul>
+                    <li>Red Hat OpenShift I: Containers &amp; Kubernetes</li>
+                    <li>IBM Cloud &amp; Cognitive Patterns</li>
+                    <li>AWS Cloud Practitioner</li>
+                    <li>AWS AI Practitioner</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section class="section">
+              <div class="section-header">
+                <h2>Habilidades</h2>
+              </div>
+              <div class="card">
+                <div class="chips">
+                  <span class="chip">IBM Cloud</span>
+                  <span class="chip">Google Cloud</span>
+                  <span class="chip">AWS</span>
+                  <span class="chip">Azure</span>
+                  <span class="chip">VMWare</span>
+                  <span class="chip">Bare Metal</span>
+                  <span class="chip">OpenShift</span>
+                  <span class="chip">GitHub / GitLab</span>
+                  <span class="chip">Jenkins</span>
+                  <span class="chip">PHP</span>
+                  <span class="chip">HTML</span>
+                  <span class="chip">CSS</span>
+                  <span class="chip">NodeJS</span>
+                  <span class="chip">React</span>
+                  <span class="chip">Spring Boot</span>
+                  <span class="chip">SQL</span>
+                  <span class="chip">Python</span>
+                  <span class="chip">Spanish (Native)</span>
+                  <span class="chip">English</span>
+                  <span class="chip">French (basic)</span>
+                </div>
+              </div>
+            </section>
+          </main>
         </div>
       </div>
-    </footer>
+    </div>
   </body>
 </html>
